@@ -15,7 +15,6 @@ def count_words(lines):
                'seven': 7, 'eight': 8, 'nine': 9}
 
     for line in lines:
-        print(line)
         for word in line:
             if word in numbers:
                 words[previous_word] += numbers[word] - 1
@@ -38,7 +37,6 @@ def get_args():
 def main():
 
     args = get_args()
-    print(type(args.in_fname))
     lines = read_the_file(args.in_fname)
 
     lines = [line.strip().split(' ') for line in lines]
