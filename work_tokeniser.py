@@ -46,14 +46,10 @@ def main():
 
     counted_words = [(word, count) for word, count in counted_words.items()]
 
-    print(counted_words)
-
     counted_words.sort(key=lambda x: x[0])
-
-    print(counted_words)
-
     counted_words.sort(key=lambda x: x[1], reverse=True)
 
-    print(counted_words)
+    for word_count in counted_words[:5]:
+        print(word_count[0] + ': ' + str(word_count[1]))
 if __name__ == '__main__':
     main()
