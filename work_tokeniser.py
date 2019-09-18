@@ -16,6 +16,7 @@ def count_words(lines):
 
     for line in lines:
         for word in line:
+            word = word.lower()
             if word in numbers:
                 words[previous_word] += numbers[word] - 1
             else:
@@ -43,7 +44,16 @@ def main():
 
     counted_words = count_words(lines)
 
+    counted_words = [(word, count) for word, count in counted_words.items()]
+
     print(counted_words)
 
+    counted_words.sort(key=lambda x: x[0])
+
+    print(counted_words)
+
+    counted_words.sort(key=lambda x: x[1], reverse=True)
+
+    print(counted_words)
 if __name__ == '__main__':
     main()
